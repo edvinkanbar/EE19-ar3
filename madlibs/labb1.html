@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inloggning</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="kontainer">
+        <h1 class="display-4">Madlibs</h1>
+        </nav>
+        <form class="kol2" action="madlibs.php" method="POST">
+            <label>Vad heter du?</label>
+            <input type="text" name="namn" placeholder="Tex erik12" required>
+            
+            <label>Vart bor du</label>
+            <input type="text" name="bostad" placeholder="Tex fruängen" required>
+            
+            <label>Hur lång är du</label>
+            <input type="text" name="längd" placeholder="Tex 157cm" required>
+            
+            <label>Skostorlek?</label>
+            <input type="text" name="storlek" placeholder="Tex storlek 45" required>
+            
+            <label>Vad gillar du för mat</label>
+            <input type="text" name="mat" placeholder="Tex pasta carbonara" required>
+            <button class="primary">Skicka</button>
+        </form>
+    </div>
+</body>
+</html>
