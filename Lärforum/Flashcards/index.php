@@ -1,5 +1,8 @@
 <?php
-    $number = filter_input(INPUT_GET, 'num', FILTER_SANITIZE_NUMBER_INT);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+$number = filter_input(INPUT_GET, 'num', FILTER_SANITIZE_NUMBER_INT);
 ?>
 
 <!DOCTYPE html>
@@ -12,14 +15,14 @@
     <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body>
-    <?php include("view/header.php");?>
+    <?php include("header.php"); ?>
     <?php
-    if ($number)  {
-        include("view/results.php");
+    if ($number) {
+        include("results.php");
     } else {
-        include("view/form.php");
+        include("form.php");
     }
     ?>
-    <?php include("view/footer.php");?>
+    <?php include("footer.php"); ?>
 </body>
 </html>
