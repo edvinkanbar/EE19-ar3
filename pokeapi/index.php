@@ -29,7 +29,7 @@
  // tugga ingeom en array
  foreach ($results as $item) {
      $name =$item->name;
-     echo "<option>$name</option>";
+     echo "<option value=\"$name\">$name</option>";
  }
  ?>
 </select>
@@ -39,5 +39,3 @@
     </div>
 </body>
 </html>
-[13:06] Pago:
-Bild

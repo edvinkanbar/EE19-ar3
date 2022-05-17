@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMHI temperatur graf</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+</head>
+
+<body>
+    <div class="kontainer">
+        <h1>Temperaturprognos - Stockholm</h1>
+        <canvas id="myChart" width="600" height="500"></canvas>
+        
+    </div>
+    <script defer>
+
+        // Två tomma variabler
+        var klockslag = []
+        var temperaturer = [];
+
+        // Hämta data från smhi.php
+        //Fylla i "klockslag" och "temperaturer"
+        fetch("smhi.php")
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(element => {
+                klockslag.push(element.label);
+                temperaturer.push(element.t);
+            });
+        });
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: klockslag,
+                datasets: [{
+                    label: 'Temperatur',
+                    data: temperaturer,
+                    borderColor: [
+                        'rgb(84, 163, 209)',
+                    ],
+                    borderWidth: 2,
+                    tension: 0.5
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

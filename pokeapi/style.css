@@ -1,3 +1,7 @@
+body {
+    background: url(./bilder/akin-cakiner-9cIkK-hLD9k-unsplash.jpg);
+    background-attachment: fixed;
+}
 
 .kontainer {
     width:500px;
